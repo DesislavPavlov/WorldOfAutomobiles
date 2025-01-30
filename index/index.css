@@ -1,0 +1,153 @@
+/* Custom nav */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em 0;
+    background: none;
+    z-index: 10;
+}
+
+nav h1 {
+    margin: 0;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Video */
+.video-container {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    min-width: 100%;
+    min-height: 100%;
+    transition: 0.5s;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator-arrow {
+    opacity: 0.4;
+    animation: blink 3.5s infinite alternate;
+}
+
+.indicator-arrow:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.4;
+    }
+    75% {
+        opacity: 0.4;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Info section */
+#history-section {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    display: none;
+    grid-template-columns: repeat(2, min(40%, 740px));
+    justify-content: space-evenly;
+    gap: 2em;
+    padding: 3em 2em;
+}
+
+#history-section .card {
+    background-color: #121212ae;
+    box-shadow: 1px 4px 8px 0px #61616153;
+    opacity: 0;
+    transform: translate(-10%, 10%);
+    animation: 1s cardAppear forwards;
+    transition: 0.5s;
+}
+
+#history-section img {
+    width: 100%;
+}
+
+#history-section .container {
+    padding: 0.5em 1.5em;
+    color: rgb(238, 238, 238);
+}
+
+#history-section ul {
+    padding-left: 1.5em;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s !important;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s !important;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s !important; 
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.8s !important;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 700px) {
+    #history-section {
+        grid-template-columns: 70%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #history-section {
+        grid-template-columns: 90%;
+    }
+}

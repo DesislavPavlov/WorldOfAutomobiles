@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="https://kit.fontawesome.com/88959bd2cd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="form-container">
+        <form data-form>
+            <h3>Нека намерим <span>ТВОЯТ БЪДЕЩ АВТОМОБИЛ</span></h3>
+
+            <div class="progress-bar" data-progress>
+                <div data-progress-step><i class="fa-solid fa-car"></i></div>
+                <div data-progress-step><i class="fa-solid fa-wrench"></i></div>
+                <div data-progress-step><i class="fa-solid fa-medal"></i></div>
+            </div>
+
+            <div data-step>
+                <div class="input-container">
+                    <select name="brand" id="brand" onchange="generateModelOptions()">
+                        <option value="" selected disabled hidden></option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes-benz">Mercedes-Benz</option>
+                        <option value="audi">Audi</option>
+                        <option value="vw">Volkswagen</option>
+                        <option value="opel">Opel</option>
+                        <option value="skoda">Skoda</option>
+                        <option value="renault">Renault</option>
+                        <option value="honda">Honda</option>
+                    </select>
+                    <label for="brand" class="select-label">Марка</label>
+                </div>
+                <div class="input-container">
+                    <select name="model" id="model" disabled>
+                        <option value="" selected disabled hidden></option>
+                    </select>
+                    <label for="model" class="select-label">Модел</label>
+                </div>
+                <div class="input-container">
+                    <select name="type" id="type">
+                        <option value="" selected></option>
+                        <option value="van">Ван</option>
+                        <option value="dzhip">Джип</option>
+                        <option value="kabrio">Кабрио</option>
+                        <option value="kombi">Комби</option>
+                        <option value="kupe">Купе</option>
+                        <option value="minivan">Миниван</option>
+                        <option value="pikap">Пикап</option>
+                        <option value="sedan">Седан</option>
+                        <option value="strech-limuzina">Стреч лимузина</option>
+                        <option value="hechbek">Хечбек</option>
+                    </select>
+                    <label for="type" class="select-label">Вид</label>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn-next" data-next>Напред</button>
+                </div>
+            </div>
+            <div data-step>
+                <div class="input-container">
+                    <select name="engine" id="engine">
+                        <option value="" selected></option>
+                        <option value="benzinov">Бензинов</option>
+                        <option value="dizelov">Дизелов</option>
+                        <option value="elektricheski">Електрически</option>
+                        <option value="hibriden">Хибриден</option>
+                        <option value="plug-in-hibrid">Plug-in хибрид</option>
+                        <option value="dvigatel-gaz">Газ</option>
+                        <option value="vodorod">Водород</option>
+                    </select>
+                    <label class="select-label" for="engine">Двигател</label>
+                </div>
+                <div class="input-container">
+                    <label>Скоростна кутия</label>
+                    <div class="radio-input">
+                        <label for="gearbox-manual">
+                            <input type="radio" name="gearbox" id="gearbox-manual" value="rachna">
+                            <span aria-hidden="true"></span>
+                            Ръчна
+                        </label>
+                    </div>
+                    <div class="radio-input">
+                        <label for="gearbox-auto">
+                            <input type="radio" name="gearbox" id="gearbox-auto" value="avtomatichna">
+                            <span aria-hidden="true"></span>
+                            Автоматична
+                        </label>
+                    </div>
+                    <div class="radio-input">
+                        <label for="gearbox-semiauto">
+                            <input type="radio" name="gearbox" id="gearbox-semiauto" value="poluavtomatichna">
+                            <span aria-hidden="true"></span>
+                            Полуавтоматична
+                        </label>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="slider">Кубатура</label>
+                    <div class="slider-container">
+                        <div class="range-slider">
+                            <div class="track"></div>
+                            <div class="range"></div>
+                            <input type="range" class="slider-1" min="0" max="10000" value="100" step="200" name="engine_cubature">
+                            <input type="range" class="slider-2" min="0" max="10000" value="2600" step="200" name="engine_cubature1">
+                        </div>
+                    </div>
+                    <div class="output-container">
+                        <span class="value-1"></span>
+                        <span class="value-2"></span>
+                    </div>
+                    <div class="checkbox-input">
+                        <label for="higher-cubature">
+                            <input type="checkbox" name="higher-cubature" id="higher-cubature">
+                            <span aria-hidden="true"></span>
+                            10 000+
+                        </label>
+                    </div>
+                    <div class="checkbox-input">
+                        <label for="no-cubature">
+                            <input type="checkbox" name="no-cubature" id="no-cubature">
+                            <span aria-hidden="true"></span>
+                            Без значение
+                        </label>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn-prev" data-prev>Назад</button>
+                    <button type="button" class="btn btn-next" data-next>Напред</button>
+                </div>
+            </div>
+            <div data-step>
+                <div class="input-container">
+                    <label for="slider">Цена (лв.)</label>
+                    <div class="slider-container">
+                        <div class="range-slider">
+                            <div class="track"></div>
+                            <div class="range"></div>
+                            <input type="range" class="slider-1" min="0" max="70000" value="2000" step="500" name="price">
+                            <input type="range" class="slider-2" min="0" max="70000" value="5000" step="500" name="price1">
+                        </div>
+                    </div>
+                    <div class="output-container">
+                        <span class="value-1"></span>
+                        <span class="value-2"></span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="slider">Година</label>
+                    <div class="slider-container">
+                        <div class="range-slider">
+                            <div class="track"></div>
+                            <div class="range"></div>
+                            <input type="range" class="slider-1" min="1930" max="2025" value="1990" step="1" name="ot">
+                            <input type="range" class="slider-2" min="1930" max="2025" value="2020" step="1" name="do">
+                        </div>
+                    </div>
+                    <div class="output-container">
+                        <span class="value-1"></span>
+                        <span class="value-2"></span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label>Състояние</label>
+                    <div class="checkbox-input">
+                        <label for="condition-used">
+                            <input type="checkbox" name="condition-used" id="condition-used" value="0" checked>
+                            <span aria-hidden="true"></span>
+                            Употребяван
+                        </label>
+                    </div>
+                    <div class="checkbox-input">
+                        <label for="condition-new">
+                            <input type="checkbox" name="condition-new" id="condition-new" value="1" checked>
+                            <span aria-hidden="true"></span>
+                            Нов
+                        </label>
+                    </div>
+                    <div class="checkbox-input">
+                        <label for="condition-parts">
+                            <input type="checkbox" name="condition-parts" id="condition-parts" value="2">
+                            <span aria-hidden="true"></span>
+                            За части
+                        </label>
+                    </div>
+                    <div class="checkbox-input">
+                        <label for="condition-damaged">
+                            <input type="checkbox" name="condition-damaged" id="condition-damaged" value="3">
+                            <span aria-hidden="true"></span>
+                            Повреден / ударен
+                        </label>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn-prev" data-prev>Назад</button>
+                    <button type="submit" class="btn btn-next btn-end" data-end>Намери обява!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

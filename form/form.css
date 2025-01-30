@@ -1,0 +1,450 @@
+/* General */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    line-height: 1.4;
+    font-family: sans-serif;
+    color: #122c33db;
+    background-image: url("../media/background\ car\ arrangement.webp");
+    background-size: cover;
+    backdrop-filter: blur(10px) ;
+    background-repeat: round;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+/* Form */
+#form-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: min(80vw, 450px);
+    background-color: #F1EFE2;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    box-shadow: 2px 2px 4px 1px #94938d;
+    border-radius: 0.2em;
+    gap: 1.5em;
+}
+
+form h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+form h3::after {
+    content: '';
+    width: 30%;
+    height: 0.1em;
+    margin-top: 0.3em;
+    background-color: #112c3378;
+}
+
+form h3 span {
+    font-size: 1.65rem;
+    font-weight: bolder;
+    color: #112c33d6;
+    text-shadow: 2px 2px 2px #BFCCB8;
+}
+
+/* Progress bar */
+form .progress-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+form .progress-bar div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+form .progress-bar div:not(:last-child)::before, form .progress-bar div:not(:last-child)::after {
+    content: '';
+    width: 80%;
+    height: 0.1em;
+    background-color: #c6d3d691;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transition: width 1s;
+}
+
+form .progress-bar div:not(:last-child)::after {
+    width: 0;
+    background-color: #afaa82;
+}
+
+form .progress-bar div.completed:not(:last-child)::after {
+    width: 80%;
+}
+
+form .progress-bar div i {
+    transition: color 1s;
+    z-index: 2;
+}
+
+form .progress-bar div.completed i, form .progress-bar div.active i {
+    color: #afaa82;
+}
+
+/* Steps */
+form div[data-step] {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: showDataStep;
+}
+
+@keyframes showDataStep {
+    0% {
+        opacity: 0;
+        transform: scale(1.05) translateX(10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes hideDataStep {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
+form .input-container {
+    position: relative;
+    width: 40%;
+}
+
+/* Dropdowns */
+form select {
+    padding: 0.4em;
+    font-size: 1.1rem;
+    width: 100%;
+    background-color: #BFCCB80F;
+    border: 2px solid #BFCCB8;
+    border-radius: 0.4em;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    color: #122c33db;
+}
+
+form option {
+    background-color: rgb(246, 244, 235)
+}
+
+form select:has(option[value=""]:not(:checked)) {
+    border: 1px solid #C5C098;
+    background-color: transparent;
+}
+
+form select:focus.active {
+    border: 1px solid #C5C098;
+    border-bottom: 6px solid #C5C098 !important;
+    background-color: transparent;
+}
+
+form select:disabled, form select:disabled + label.select-label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+form label.select-label {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+form select:focus {
+    outline: 3px solid #b3c0ac;
+}
+
+form select:focus.active + label, form select:has(option[value=""]:not(:checked)) + label.select-label{
+    top: -0.8em;
+    background-color: #F1EFE2;
+    padding: 0 0.3em;
+    font-size: 0.8rem;
+    color: #afaa82;
+}
+
+/* Form buttons */
+.buttons {
+    margin-top: 1em;
+    width: 65%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-prev, .btn-next {
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    padding: 0.7em 1.4em;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 2px 2px 3px #112c3341;
+}
+
+.btn-next {
+    background-color: #112c33d6;
+    color: #f7f6f2;
+    border: none;
+}
+
+.btn-prev {
+    background-color: transparent;
+    color: #112c33d6;
+    font-weight: 600;
+    border: 2px solid #112c33d6;
+}
+
+.btn-next:hover, .btn-next:focus {
+    background-color: #112c33;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-next:active {
+    background-color: #112c3349;
+}
+
+.btn-prev:hover, .btn-prev:focus {
+    background-color: #112c33d6;
+    color: white;
+    transform: scale(0.95);
+}
+
+.btn-prev:active {
+    background-color: #112c3372;
+}
+
+.btn-end {
+    background-image: linear-gradient(to right, #112c33, #afaa82, #8c886e);
+    background-size: 300% 100%;
+}
+
+.btn-end:hover, .btn-end:focus {
+    background-position: 100% 0;
+}
+
+.btn-end:active {
+    opacity: 0.5;
+}
+
+.btn-prev:focus, .btn-next:focus, .btn-end:focus {
+    outline: 3px solid #afaa82;
+}
+
+/* Double range slider */
+.slider-container {
+    width: 100%;
+    position: relative;
+}
+
+.range-slider {
+  position: relative;
+  width: 100%;
+}
+
+.range-slider input[type="range"] {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+.range-slider input[type="range"]:focus{
+    outline: 2px solid #b3c0ac;
+    border-radius: 0.4em;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: #112c33;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+    pointer-events: all;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: #112c33;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.range-slider .track {
+    position: absolute;
+    margin-top: 0.4em;
+    width: 100%;
+    height: 0.3em;
+    background-color: #ddd;
+    z-index: 0;
+    border-radius: 2px;
+}
+
+.range-slider .range {
+    position: absolute;
+    margin-top: 0.4em;
+    height: 0.3em;
+    background-color: #adb7a7;
+    z-index: 0;
+    border-radius: 2px;
+}
+
+.output-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.output-container span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Checkboxes / Radio */
+.checkbox-input, .radio-input {
+    padding: 0.4em;
+}
+
+.checkbox-input:focus, .radio-input:focus {
+    border: 1px solid black;
+}
+
+.checkbox-input label, .radio-input label{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+}
+
+.checkbox-input input[type="checkbox"], .radio-input input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-input span {
+    width: 1em;
+    height: 1em;
+    background-color: #BFCCB80F;
+    border: 2px solid #BFCCB8;
+    border-radius: 0.2em;
+    position: relative;
+    display: inline-block;
+}
+
+.radio-input span {
+    width: 1em;
+    height: 1em;
+    background-color: #BFCCB80F;
+    border: 2px solid #BFCCB8;
+    border-radius: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.checkbox-input:has(input:focus), .radio-input:has(input:focus) {
+    outline: 2px solid #b3c0ac;
+    border-radius: 0.4em;
+}
+
+.checkbox-input:has(input:checked), .radio-input:has(input:checked) {
+    background-color: #BFCCB80F;
+    border: 2px solid #bfccb829;
+    border-radius: 0.4em;
+}
+
+.checkbox-input:has(input:checked) span::after, .radio-input:has(input:checked) span::after{
+    content: "✔";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: #BFCCB8;
+}
+
+.radio-input:has(input:checked) span::after {
+    content: "";
+    width: 75%;
+    height: 75%;
+    border-radius: 100%;
+    background-color: #BFCCB8;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 540px) {
+    form {
+        padding: 1.5em;
+    }
+
+    form .input-container {
+        width: 80%;
+    }
+
+    form h3 {
+        font-size: 1.4rem;
+    }
+
+    form h3 span {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+}
