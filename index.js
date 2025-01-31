@@ -7,6 +7,7 @@ const scrollIndicator = document.querySelector('.scroll-indicator');
 // Desktop
 let readyForHiding = true;
 hideInfo();
+
 document.addEventListener('wheel', handleWheel);
 
 function handleWheel(e) {

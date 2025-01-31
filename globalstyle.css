@@ -18,15 +18,20 @@ nav {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 1em;
-    background: none;
+    background-color: #091416e9;
+    z-index: 999;
 }
 
-nav h1 {
+nav h1 a{
     margin: 0;
     color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.1s ease-in;
 }
 
 nav ul {
@@ -34,21 +39,86 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 10px;
+    gap: 1em;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+    transition: opacity 0.1s ease-in;
+    font-size: 1rem;
 }
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    height: 100vh;
+    width: 30vw;
+    padding: 2em;
+    background-color: #25262679;
+    backdrop-filter: blur(0.7em);
+    display: none;
+    flex-direction: column;
+    gap: 0.75em;
+    opacity: 0.1;
+    transition: opacity 0.3s ease-in, transform 0.4s ease-out;
+}
+
+.sidebar .close-icon {
+    margin-bottom: 0.5em;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon, .close-icon {
+    cursor: pointer;
+    transition: opacity 0.1s ease-in;
+}
+
+.menu-icon:hover, .close-icon:hover, nav ul li a:hover, nav h1 a:hover {
+    opacity: 0.6;
+}
 
 @media screen and (max-width: 700px) {
     nav {
+        justify-content: space-between;
+        padding: 1em 2em;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .main-nav {
         display: none;
+    }
+
+    .sidebar {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        padding: 1em;
+    }
+
+    .sidebar {
+        width: 70vw;
+        right: -70%;
+    }
+
+    nav h1 a{
+        font-size: 1.1rem;
+    }
+
+    .menu-icon {
+        width: 1.8rem;
+        height: 1.8rem;
     }
 }
