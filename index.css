@@ -84,14 +84,19 @@ nav ul li a {
 
 /* Info section */
 #history-section {
+    height: 100vh;
     position: absolute;
     top: 10%;
     left: 0;
-    display: none;
+    display: grid;
     grid-template-columns: repeat(2, min(40%, 740px));
     justify-content: space-evenly;
     gap: 2em;
     padding: 3em 2em;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0.5em;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 #history-section .card {
@@ -101,6 +106,12 @@ nav ul li a {
     transform: translate(-10%, 10%);
     animation: 1s cardAppear forwards;
     transition: 0.5s;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+#history-section::-webkit-scrollbar {
+    display: none;
 }
 
 #history-section img {
@@ -143,6 +154,7 @@ nav ul li a {
 @media screen and (max-width: 700px) {
     #history-section {
         grid-template-columns: 70%;
+        scroll-padding-top: 0em;
     }
 }
 
