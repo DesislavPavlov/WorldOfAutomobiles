@@ -1,10 +1,10 @@
 const sidebar = document.querySelector('.sidebar');
-const menuBtn = document.querySelector('.menu-icon');
-const closeBtn = document.querySelector('.close-icon');
+const navMenuBtn = document.querySelector('.menu-icon');
+const navCloseBtn = document.querySelector('.close-icon');
 const rightOffset = sidebar.style.transform;
 
 
-menuBtn.addEventListener("click", () => {
+navMenuBtn.addEventListener("click", () => {
     document.body.style.overflow = 'hidden';
     sidebar.style.display = 'flex';
     setTimeout(() => {
@@ -13,7 +13,7 @@ menuBtn.addEventListener("click", () => {
     }, 10);
 });
 
-closeBtn.addEventListener("click", () => {
+navCloseBtn.addEventListener("click", () => {
     sidebar.style.transform = rightOffset;
     sidebar.style.opacity = '0.1';
     setTimeout(() => {

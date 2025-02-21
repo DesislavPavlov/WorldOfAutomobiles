@@ -14,15 +14,12 @@ body {
 }
 
 nav {
-    position: absolute;
-    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 1em;
     background-color: #091416e9;
-    z-index: 999;
 }
 
 nav h1 a{

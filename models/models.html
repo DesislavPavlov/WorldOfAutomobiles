@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Светът на автомобилите - Марки и модели</title>
     <link rel="stylesheet" href="../globalstyle.css">
-    <script defer src="../globalscript.js"></script>
+    <link rel="stylesheet" href="../models/models.css">
 </head>
 <body>
     <nav>
@@ -25,5 +25,23 @@
             <li><a href="../map/map.html">Карта</a></li>
         </ul>
     </nav>
+
+    <section class="container">
+        <div class="grid" id="grid"></div>
+    
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close" id="close">&times;</span>
+                <div class="brand-header">
+                    <img id="brand-logo" src="" alt="Brand Logo">
+                    <h2 id="brand-name"></h2>
+                </div>
+                <div class="car-images" id="car-models"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../models/models.js" defer></script>
+    <script src="../globalscript.js" defer></script>
 </body>
 </html>
