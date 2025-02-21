@@ -62,7 +62,7 @@ nav {
     top: 10%;
     left: 0;
     display: grid;
-    grid-template-columns: repeat(2, min(40%, 740px));
+    grid-template-columns: repeat(2, min(40%, 500px));
     justify-content: space-evenly;
     gap: 2em;
     padding: 3em 2em;

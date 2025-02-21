@@ -16,7 +16,7 @@ function handleWheel(e) {
     if (deltaY > 0) {
         revealInfo();
     } 
-    else if (deltaY < 0 && content.scrollTop == 0) {
+    else if (deltaY < 0 && content.scrollTop < 100) {
         hideInfo();
     }
 }
@@ -32,7 +32,7 @@ document.addEventListener("touchmove", (e) => {
     
     if (deltaY < startY) {
         revealInfo();
-    } else if (deltaY > startY && content.scrollTop == 0) {
+    } else if (deltaY > startY && content.scrollTop < 100) {
         hideInfo();
     }
 });

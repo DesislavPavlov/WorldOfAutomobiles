@@ -105,16 +105,16 @@ nav {
     padding: 0.5em;
     border-radius: 100%;
     width: 3.7em;
-    background-color: #bfccb8;
-    border: 2px solid #85997a;
-    color: #748b67;
+    background-color: #091416e9;
+    border: 2px solid #e2e8e9;
+    color: #e2e8e9;
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .navigating-buttons button:hover {
-    background-color: #85997a;
-    color: #bfccb8;
+    background-color: #112c33d6;
+    color: #ffffff;
 }
 
 .navigating-buttons i {
