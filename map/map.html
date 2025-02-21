@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Светът на автомобилите - Карта</title>
     <link rel="stylesheet" href="../globalstyle.css">
-    <script defer src="../globalscript.js"></script>
+    <link rel="stylesheet" href="../map/map.css">
+
+    <!-- Map API -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.1/css/leaflet.extra-markers.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.1/js/leaflet.extra-markers.min.js"></script>
+    <script src="https://kit.fontawesome.com/88959bd2cd.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
@@ -25,5 +32,13 @@
             <li><a href="../map/map.html">Карта</a></li>
         </ul>
     </nav>
+    
+    <div class="container">
+        <h2>Заводи за автомобили в България</h2>
+        <div id="map"></div>
+    </div>
+
+    <script src="../map/map.js" defer></script>
+    <script src="../globalscript.js" defer></script>
 </body>
 </html>
