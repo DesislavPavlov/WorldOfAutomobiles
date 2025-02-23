@@ -51,6 +51,7 @@ nav ul li a {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1001;
     transform: translateX(100%);
     height: 100vh;
     width: 30vw;
@@ -96,7 +97,7 @@ nav ul li a {
     }
 
     .sidebar {
-        width: 30vw;
+        width: 50vw;
     }
 }
 
@@ -106,8 +107,7 @@ nav ul li a {
     }
 
     .sidebar {
-        width: 70vw;
-        right: -70%;
+        width: 100vw;
     }
 
     nav h1 a{
