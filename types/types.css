@@ -28,7 +28,7 @@ nav {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(10px) opacity(0.1);
+    filter: blur(7px) opacity(0.2);
     z-index: -10;
     transition: background-image 0.5s;
 }
