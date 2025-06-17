@@ -33,9 +33,9 @@ This app was developed to showcase frontend design, responsive UI, and to explor
 
 ---
 
-## 🖼️ UI Preview
+## 🖼️ UI Preview (responsive)
 
-![UI GIF Demo](readme_resources/demo_preview.gif)
+![UI GIF Demo](readme_resources/responsive_demo_preview.gif)
 
 > 🎥 Want to see more? Check out the [Live Demo](https://desislavpavlov.github.io/WorldOfAutomobiles/)
 
@@ -49,14 +49,14 @@ WorldOfAutomobiles/
 ├── map/
 ├── media/
 ├── models/
+├── readme_resources/
 ├── types/
+└── README.md
 ├── globalscript.js
 ├── globalstyle.css
 ├── index.css
 ├── index.html
 ├── index.js
-├── readme_resources/
-└── README.md
 ```
 
 ---
